@@ -13,3 +13,11 @@ dist/
 *.swo
 *~
 package-lock.json
+artifacts/
+cache/
+deployments/
+types/
+fhevmTemp/
+__pycache__/
+*.pyc
+Thumbs.db
