@@ -18,6 +18,8 @@ tmp
 # files
 *.env
 *.log
+*.js
+*.ts
 .DS_Store
 .pnp.*
 coverage.json
