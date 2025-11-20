@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # fhevm
 fhevmTemp
 
@@ -25,3 +26,28 @@ tmp
 coverage.json
 pnpm-lock.yaml
 yarn.lock
+=======
+node_modules/
+*.log
+.DS_Store
+.env
+.env.local
+.env.production
+build/
+dist/
+.cache/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+package-lock.json
+artifacts/
+cache/
+deployments/
+types/
+fhevmTemp/
+__pycache__/
+*.pyc
+Thumbs.db
+>>>>>>> 73fda7b9853aa3c33f5270deebff62776c298546

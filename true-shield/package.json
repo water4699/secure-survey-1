@@ -1,0 +1,60 @@
+{
+  "name": "true-shield",
+  "version": "1.0.0",
+  "description": "Encrypted Game Preference Survey using FHEVM",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "deploy:local": "hardhat deploy --network anvil",
+    "deploy:sepolia": "hardhat deploy --network sepolia",
+    "test": "hardhat test",
+    "test:coverage": "hardhat coverage",
+    "typechain": "hardhat typechain",
+    "lint": "eslint --ext .ts test/ tasks/",
+    "lint:fix": "eslint --fix --ext .ts test/ tasks/",
+    "format": "prettier --write test/**/*.ts tasks/**/*.ts",
+    "format:check": "prettier --check test/**/*.ts tasks/**/*.ts",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "start:local": "npx hardhat node"
+  },
+  "keywords": [
+    "fhevm",
+    "fhe",
+    "encryption",
+    "survey",
+    "privacy"
+  ],
+  "author": "TrueShield Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@fhevm/hardhat-plugin": "^0.1.0",
+    "@nomicfoundation/hardhat-chai-matchers": "^2.1.0",
+    "@nomicfoundation/hardhat-ethers": "^3.1.0",
+    "@nomicfoundation/hardhat-network-helpers": "^1.1.0",
+    "@nomicfoundation/hardhat-verify": "^2.1.0",
+    "@typechain/ethers-v6": "^0.5.1",
+    "@typechain/hardhat": "^9.1.0",
+    "@types/chai": "^4.3.20",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.19.8",
+    "@typescript-eslint/eslint-plugin": "^8.37.0",
+    "@typescript-eslint/parser": "^8.37.0",
+    "chai": "^4.5.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "hardhat": "^2.26.0",
+    "hardhat-deploy": "^0.11.45",
+    "hardhat-gas-reporter": "^2.3.0",
+    "prettier": "^3.6.2",
+    "solidity-coverage": "^0.8.16",
+    "ts-node": "^10.9.2",
+    "typechain": "^8.3.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@fhevm/solidity": "^0.8.0",
+    "ethers": "^6.15.0"
+  }
+}
+
