@@ -3,8 +3,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
 
-import { config } from './config/wagmi';
-import { IncomeSurveyApp } from './components/IncomeSurveyApp';
+import { config } from '@/config/wagmi';
+import { IncomeSurveyApp } from '@/components/IncomeSurveyApp';
 
 const queryClient = new QueryClient();
 
