@@ -2,6 +2,11 @@
 
 A privacy-preserving income range survey application built with Fully Homomorphic Encryption (FHE) using the FHEVM protocol by Zama. Users can submit their income range selections anonymously while enabling homomorphic statistics computation without revealing individual data.
 
+## 🎥 Demo & Live Deployment
+
+- **🎬 Video Demo**: [Watch the full demonstration](https://github.com/GladysJonson/secure-survey-vault/blob/main/secure-survey.mp4)
+- **🚀 Live App**: [Try it on Vercel](https://secure-survey-1.vercel.app/)
+
 ## Features
 
 - **Privacy-Preserving**: All income data is encrypted using FHE
