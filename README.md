@@ -86,79 +86,79 @@ For detailed FHEVM instructions see:
    npx hardhat test --network sepolia
    ```
 
-## 🔄 部署维护流程 (Deployment Maintenance)
+## 🔄 Deployment Maintenance Process
 
-每次重新部署合约后，需要执行以下步骤来确保前端配置正确更新：
+After each contract redeployment, follow these steps to ensure frontend configuration is properly updated:
 
-### 自动流程 (推荐 - Automated Process)
+### Automated Process (Recommended)
 ```bash
-# 使用自动化脚本 - 自动更新所有配置
-npm run deploy          # 本地部署
-npm run deploy:sepolia  # Sepolia部署
+# Use automated scripts - automatically update all configurations
+npm run deploy          # Local deployment
+npm run deploy:sepolia  # Sepolia deployment
 ```
 
-### 手动流程 (Manual Process)
-如果需要手动更新或出现问题：
+### Manual Process (If Issues Occur)
+If you need to update manually or encounter problems:
 
-1. **检查部署日志中的新地址**
+1. **Check new addresses in deployment logs**
    ```bash
-   # 部署完成后检查输出
+   # Check output after deployment
    npx hardhat deploy --network localhost
-   # 输出会显示: "IncomeSurveySimple contract: 0x..."
+   # Output will show: "IncomeSurveySimple contract: 0x..."
    ```
 
-2. **更新前端地址配置**
+2. **Update frontend address configuration**
    ```typescript
    // frontend/src/config/contracts.ts
    export const CONTRACT_ADDRESSES = {
-     31337: '0x...',  // 更新localhost地址
-     11155111: '0x...' // 更新sepolia地址
+     31337: '0x...',  // Update localhost address
+     11155111: '0x...' // Update sepolia address
    } as const;
    ```
 
-3. **重新生成ABI** (如果合约有变更)
+3. **Regenerate ABI** (if contract has changes)
    ```bash
    npm run compile
-   npm run update-deployment  # 自动更新ABI
+   npm run update-deployment  # Automatically update ABI
    ```
 
-4. **测试合约连接**
+4. **Test contract connection**
    ```bash
-   # 运行连接测试
+   # Run connection test
    node scripts/update-deployment.js
-   # 或使用自动化脚本验证
+   # Or use automated script to verify
    npm run update-deployment
    ```
 
-### 故障排除 (Troubleshooting)
+### Troubleshooting
 
-**问题**: 前端显示"Contract not deployed"错误
+**Issue**: Frontend shows "Contract not deployed" error
 ```bash
-# 解决方案: 重新部署并更新配置
+# Solution: Redeploy and update configuration
 npm run deploy
 ```
 
-**问题**: 合约调用失败，返回"0x"
+**Issue**: Contract call fails, returns "0x"
 ```bash
-# 解决方案: 检查地址是否正确更新
+# Solution: Check if address is correctly updated
 node scripts/update-deployment.js
 ```
 
-**问题**: ABI不匹配
+**Issue**: ABI mismatch
 ```bash
-# 解决方案: 重新编译并更新
+# Solution: Recompile and update
 npm run compile && npm run update-deployment
 ```
 
-### 自动化脚本说明
+### Automated Scripts Description
 
-项目包含自动化部署更新脚本：
+The project includes automated deployment update scripts:
 
-- `scripts/update-deployment.js`: 自动从部署文件中读取地址并更新前端配置
-- `npm run update-deployment`: 运行更新脚本
-- `npm run deploy`: 部署 + 自动更新配置 (一键完成)
+- `scripts/update-deployment.js`: Automatically reads addresses from deployment files and updates frontend configuration
+- `npm run update-deployment`: Run the update script
+- `npm run deploy`: Deploy + automatically update configuration (one-click completion)
 
-这样可以避免手动维护配置文件的错误，大大简化部署流程。
+This avoids errors from manual configuration file maintenance and greatly simplifies the deployment process.
 
 ## 📁 Project Structure
 

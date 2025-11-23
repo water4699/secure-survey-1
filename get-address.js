@@ -1,18 +1,18 @@
 const { ethers } = require('ethers');
 
-// 从环境变量获取私钥
+// Get private key from environment variable
 const privateKey = process.env.PRIVATE_KEY;
 if (!privateKey) {
-  console.error('请设置 PRIVATE_KEY 环境变量');
+  console.error('Please set the PRIVATE_KEY environment variable');
   process.exit(1);
 }
 
 try {
-  // 创建钱包实例
+  // Create wallet instance
   const wallet = new ethers.Wallet(privateKey);
-  console.log('账户地址:', wallet.address);
-  console.log('请使用此地址从 Sepolia faucet 获取测试 ETH');
-  console.log('推荐 faucet: https://sepoliafaucet.com/');
+  console.log('Account address:', wallet.address);
+  console.log('Please use this address to get test ETH from Sepolia faucet');
+  console.log('Recommended faucet: https://sepoliafaucet.com/');
 } catch (error) {
-  console.error('无效的私钥:', error.message);
+  console.error('Invalid private key:', error.message);
 }
