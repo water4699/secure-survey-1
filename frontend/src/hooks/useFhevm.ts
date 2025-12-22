@@ -39,11 +39,15 @@ export const useFhevm = () => {
           })
         })
       });
-    } else {
-      setInstance(null);
-    }
+      } else {
+        setInstance(null);
+      }
 
-    setIsLoading(false);
+      setIsLoading(false);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Unknown error');
+      setIsLoading(false);
+    }
   }, [chainId]);
 
   return {

@@ -13,7 +13,11 @@ function App() {
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
         <RainbowKitProvider locale="en">
-          <div style={{ minHeight: '100vh', backgroundColor: '#f9fafb' }}>
+          <div className="app-wrapper">
+            {/* 云雾背景效果 */}
+            <div className="cloud-blob cloud-blob-1" />
+            <div className="cloud-blob cloud-blob-2" />
+            <div className="cloud-blob cloud-blob-3" />
             <IncomeSurveyApp />
           </div>
         </RainbowKitProvider>

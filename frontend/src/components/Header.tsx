@@ -16,25 +16,33 @@ export function Header() {
     <header className="header">
       <div className="header-container">
         <div className="header-content">
-          <div className="header-left">
-            <h1 className="header-title">
-              Secure Survey Vault
-            </h1>
-            <p className="header-subtitle">
-              Privacy-Preserving Income Range Survey
-            </p>
-            {isConnected && (
-              <div className="network-indicator">
-                <div className={`network-status ${chainId ? 'connected' : 'disconnected'}`}>
-                  <span className="network-dot"></span>
-                  <span className="network-text">
-                    {chainId ? `Connected to ${networkName}` : 'Network disconnected'}
-                  </span>
-                </div>
-              </div>
-            )}
+          {/* Logo & Brand */}
+          <div className="header-brand">
+            <div className="brand-logo">
+              <span className="logo-icon">🔐</span>
+              <div className="logo-glow"></div>
+            </div>
+            <div className="brand-text">
+              <h1 className="header-title">Secure Survey</h1>
+              <p className="header-subtitle">Privacy-Preserving Research</p>
+            </div>
           </div>
-          <ConnectButton />
+
+          {/* Center - Network Status */}
+          {isConnected && (
+            <div className="header-center">
+              <div className={`network-badge ${chainId === 31337 ? 'localhost' : chainId === 11155111 ? 'sepolia' : 'unknown'}`}>
+                <span className="network-dot"></span>
+                <span className="network-name">{networkName}</span>
+                <span className="network-chain">Chain {chainId}</span>
+              </div>
+            </div>
+          )}
+
+          {/* Right - Wallet */}
+          <div className="header-right">
+            <ConnectButton />
+          </div>
         </div>
       </div>
     </header>
