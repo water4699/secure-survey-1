@@ -1,4 +1,6 @@
 import { DeployFunction } from "hardhat-deploy/types";
+// Deployment script for FHE survey contracts
+// Handles both localhost development and Sepolia production deployments
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 
 // Deployment script for FHE survey contracts
